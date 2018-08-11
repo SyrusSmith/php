@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form action="imprimir.php" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre">
+        <br>
+        <label for="email">e-Mail:</label>
+        <input type="text" name="email">
+        <br>
+        <label for="hobbies">Seleccioná tus hobbies:</label>
+        <br>
+        <label for="deportes">Deportes:</label>
+        <input type="checkbox" name="hobbies[]" value="deportes">
+        <br>
+        <label for="leer">Leer:</label>
+        <input type="checkbox" name="hobbies[]" value="leer">
+        <br>
+        <label for="dormir">Dormir:</label>
+        <input type="checkbox" name="hobbies[]" value="dormir">
+        <br>
+        <br>
+        <label for="genero">Seleccione su género:</label>
+        <br>
+        <label for="masculino">Masculino:</label>
+        <input type="radio" name="genero" value="masculino">
+        <br>
+        <label for="femenino">Femenino:</label>
+        <input type="radio" name="genero" value="femenino">
+        <br>
+        <label for="otro">Otro:</label>
+        <input type="radio" name="genero" value="otro">
+        <br>
+
+        <input type="submit">
+    </form>
+</body>
+</html>
