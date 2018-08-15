@@ -3,8 +3,62 @@
     //     var_dump($_POST);
     // }
 
+    $sueldoBruto = $_POST['sueldo_bruto'];
+    $descJub = 0.11;
+    $descObSoc = 0.03;
+    $sueldoNeto = 0;
+    $retGan = 0.2;
+
+    
+    // PARTE D
+    if($_POST){
+
+        // PARTE B
+        function descuentoJubilacion(){
+            global $sueldoBruto, $descJub;
+            
+            $descJub = $sueldoBruto*$descJub;
+
+            return $descJub;
+        }
+
+        // PARTE C
+        function descuentoObraSocial(){
+            global $sueldoBruto, $descObSoc;
+
+            $descObSoc = $sueldoBruto*$descObSoc;
+
+            return $descObSoc;
+        }
+    };
+
+    descuentoJubilacion($sueldoBruto, $descJub);
+    // echo $descJub;
+    // echo '<br>';
+
+    descuentoObraSocial($sueldoBruto, $descObSoc);
+    // echo $descObSoc;
+    // echo '<br>';
 
 
+    // PARTE E
+    $sueldoNeto = $sueldoBruto-($descJub+$descObSoc);
+
+    if ($sueldoNeto > 35000){
+        function retencionGanancias(){
+            global $sueldoNeto, $retGan;
+
+            $retGan = $sueldoNeto*$retGan;
+            $sueldoNeto = $sueldoNeto-$retGan;
+
+            return $sueldoNeto;
+        }
+    }
+
+    retencionGanancias($sueldoNeto, $retGan);
+    // echo $sueldoNeto;
+    // echo '<br>';
+    
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +78,7 @@
 </head>
 <body>
     <div class="container">
-    
+        
     </div>
 </body>
 </html>

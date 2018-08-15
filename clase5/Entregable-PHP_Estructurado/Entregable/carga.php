@@ -23,7 +23,7 @@
         <div class="spacer"></div>
         <form class="col-6 offset-3" action="mostrar.php" method="POST">
             <div class="form-group">
-                <label for="apellido">Nombre</label>
+                <label for="nombre">Nombre</label>
                 <input type="text" class="form-control" name="nombre" require>
             </div>
                 <div class="form-group">
@@ -40,7 +40,7 @@
             </div>
             <div class="form-group form-check-inline">
                 <input class="form-check-input" type="radio" name="sexo" value="femenino">
-                <label class="form-check-label" for="masculino">Femenino</label>
+                <label class="form-check-label" for="femenino">Femenino</label>
             </div>
             <div class="form-group">
                 <label for="cargo">Seleccione cargo</label>
