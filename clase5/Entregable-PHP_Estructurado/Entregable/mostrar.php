@@ -43,7 +43,8 @@
 
     // PARTE E
     $sueldoNeto = $sueldoBruto-($descJub+$descObSoc);
-
+    echo $sueldoNeto;
+    
     if ($sueldoNeto > 35000){
         function retencionGanancias(){
             global $sueldoNeto, $retGan;
