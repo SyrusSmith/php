@@ -11,7 +11,7 @@
 $nombre = "";
 $edad = "";
 $user = "";
-$errores = "";
+$errores = [];
 
 if ($_POST){
     $nombre = $_POST['nombre'];
@@ -21,6 +21,7 @@ if ($_POST){
 
     if (count($errores) == 0){
         header('location: confirmacion.php');
+        exit;
     }
 }
 
@@ -43,26 +44,39 @@ if ($_POST){
                 <input type='hidden' name='submitted' id='submitted' value='1'/>
 
                 <div class='short_explanation'>* campos requeridos</div>
-                <!-- <input type='text' class='spmhidip' name='' /> -->
                 <br>
 
                 <div><span class='error'></span></div>
                 <div class='container'>
-                    <label for='name' >Nombre completo: </label><br/>
-                    <input type='text' name='name' id='name' value='nombre' maxlength="50" /><br/>
-                    <span id='register_name_errorloc' class='error'><?php  ?></span>
+                    <label for='name' >Nombre completo: </label>
+                    <br>
+                    <input type='text' name='nombre' id='name' value='<?php echo $nombre ?>' maxlength="50" />
+                    <br>
+                    <?php if(isset($errores['nombre'])) { ?>
+                    <span ><?php echo "<br>" . $errores['nombre']; ?></span>
+                    <?php } ?>
                 </div>
+                <br>
                 <div class='container'>
-                    <label for='edad' >Edad:</label><br/>
-                    <input type='text' name='edad' id='edad' value='edad' maxlength="50" /><br/>
-                    <span id='register_edad_errorloc' class='error'></span>
+                    <label for='edad' >Edad:</label>
+                    <br>
+                    <input type='text' name='edad' id='edad' value='<?php echo $edad ?>' maxlength="50" />
+                    <br>
+                    <?php if(isset($errores['edad'])) { ?>
+                    <span ><?php echo "<br>" . $errores['edad']; ?></span>
+                    <?php } ?>
                 </div>
+                <br>
                 <div class='container'>
-                    <label for='email' >e-Mail:</label><br/>
-                    <input type='text' name='email' id='email' value='email' maxlength="50" /><br/>
-                    <span id='register_email_errorloc' class='error'></span>
+                    <label for='email' >e-Mail:</label>
+                    <br>
+                    <input type='text' name='email' id='email' value='<?php echo $email ?>' maxlength="50" />
+                    <br>
+                    <?php if(isset($errores['email'])) { ?>
+                    <span ><?php echo "<br>" . $errores['email']; ?></span>
+                    <?php } ?>
                 </div>
-
+                <br>
                 <div class='container'>
                     <input type='submit' name='Submit' value='Enviar' />
                 </div>
