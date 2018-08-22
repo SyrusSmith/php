@@ -1,7 +1,10 @@
 <?php
 
-if($_POST):
-    header("location:confirmacion.php");
+$nombre = '';
+$apellido = '';
+
+if($_GET):
+    header("location: confirmacion.php");
     exit;
 endif;
 
