@@ -1,5 +1,25 @@
 <?php
 
+$errores = [];
+$nombre = '';
+$apellido = '';
+$edad = '';
+$email = '';
+
+if ($_POST){
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $edad = $_POST['edad'];
+    $email = $_POST['email'];
+    
+    $errores = validar($_POST);
+
+    if(count($errores) == 0){
+        header('Location: confirmacion.php');
+        exit;
+    }
+}
+
 function validar($datos) {
     
     if (trim($datos['nombre']) == '') {
