@@ -1,6 +1,7 @@
 <?php
 
 include_once('validaciones.php');
+include_once('cotroler.php');
 
 ?>
 
